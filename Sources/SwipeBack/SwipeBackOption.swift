@@ -16,6 +16,12 @@ public struct SwipeBackOption {
 
     //set Confirm Action
     var confirmAction : () -> Void = {}
+    
+    public init(maxMove: CGFloat, maxMoveY: CGFloat, confirmAction: @escaping () -> Void) {
+        self.maxMove = maxMove
+        self.maxMoveY = maxMoveY
+        self.confirmAction = confirmAction
+    }
 }
 
 
@@ -28,4 +34,16 @@ public struct SwipeBackIconOption {
     
     // Circle Size
     var circeSize :CGFloat = 44
+    
+    public init(systemImage: String = "chevron.left", iconSize: CGFloat, circeSize: CGFloat) {
+        self.systemImage = systemImage
+        self.iconSize = iconSize
+        self.circeSize = circeSize
+    }
+    
+    public init() {
+        self.systemImage = "chevron.left"
+        self.iconSize = 24
+        self.circeSize = 44
+    }
 }

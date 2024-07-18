@@ -4,7 +4,17 @@ import SwiftUI
 
 public struct SwipeBackModifier : ViewModifier {
     let option :SwipeBackOption
-    var iconOption :SwipeBackIconOption = SwipeBackIconOption()
+    let iconOption :SwipeBackIconOption
+    
+    public init(option: SwipeBackOption, iconOption: SwipeBackIconOption) {
+        self.option = option
+        self.iconOption = iconOption
+    }
+    
+    public init(option: SwipeBackOption) {
+        self.option = option
+        self.iconOption = SwipeBackIconOption()
+    }
 
     //check Is Drag
     @State private var isOnDrag = false
