@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 
-struct DragModifier : ViewModifier {
+public struct SwipeBackModifier : ViewModifier {
     let option :SwipeBackOption
     var iconOption :SwipeBackIconOption = SwipeBackIconOption()
 
@@ -17,7 +17,7 @@ struct DragModifier : ViewModifier {
     //check Impact
     @State private var ignoreImpact :Bool = false
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         ZStack(alignment: .top) {
             content
             if(isOnDrag) {

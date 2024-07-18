@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SwipeBackOption {
+public struct SwipeBackOption {
     //max move for X
     var maxMove : CGFloat = 40
     
@@ -19,7 +19,7 @@ struct SwipeBackOption {
 }
 
 
-struct SwipeBackIconOption {
+public struct SwipeBackIconOption {
     // set Image From SF Symbol
     var systemImage = "chevron.left"
     
