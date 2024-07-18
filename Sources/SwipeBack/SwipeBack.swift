@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SwipeBack : ViewModifier {
+public struct SwipeBack : ViewModifier {
     let option :SwipeBackOption
     let iconOption :SwipeBackIconOption
     
@@ -26,7 +26,7 @@ struct SwipeBack : ViewModifier {
     //check Impact
     @State private var ignoreImpact :Bool = false
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         ZStack(alignment: .top) {
             Color.white
                 .zIndex(0)
