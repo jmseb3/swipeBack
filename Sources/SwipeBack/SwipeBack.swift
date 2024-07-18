@@ -1,8 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
 import SwiftUI
 
-public struct SwipeBackModifier : ViewModifier {
+struct SwipeBack : ViewModifier {
     let option :SwipeBackOption
     let iconOption :SwipeBackIconOption
     
@@ -28,11 +26,16 @@ public struct SwipeBackModifier : ViewModifier {
     //check Impact
     @State private var ignoreImpact :Bool = false
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         ZStack(alignment: .top) {
+            Color.white
+                .zIndex(0)
+            
             content
+                .zIndex(1)
+            
             if(isOnDrag) {
-                VStack(alignment: .center){
+                HStack(alignment: .center){
                     ZStack{
                         Circle()
                             .fill(Color(hex: 0xF8F8F8))
@@ -44,9 +47,10 @@ public struct SwipeBackModifier : ViewModifier {
                     Spacer()
                 }
                 .offset(x: min(buttonOffestX,option.maxMove),y:buttonOffestY + buttonOffestYAdd)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .zIndex(999)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .gesture(
             DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
                 .onChanged{ value in
@@ -85,8 +89,6 @@ public struct SwipeBackModifier : ViewModifier {
                     buttonOffestYAdd = 0
                 }
         )
-        .frame(maxWidth: .infinity,maxHeight: .infinity)
-        .foregroundColor(.orange)
     }
 
 }
