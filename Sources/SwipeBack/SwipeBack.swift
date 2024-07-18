@@ -84,8 +84,7 @@ public struct SwipeBackModifier : ViewModifier {
                     buttonOffestYAdd = 0
                 }
         )
-      
-        .font(.system(size: 22, weight: .bold, design: .default))
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
         .foregroundColor(.orange)
     }
 
