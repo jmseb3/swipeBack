@@ -9,11 +9,12 @@ public struct SwipeBackModifier : ViewModifier {
     public init(option: SwipeBackOption, iconOption: SwipeBackIconOption) {
         self.option = option
         self.iconOption = iconOption
+        print("init option : \(option)")
+        print("init iconOption : \(iconOption)")
     }
     
     public init(option: SwipeBackOption) {
-        self.option = option
-        self.iconOption = SwipeBackIconOption()
+        self.init(option: option, iconOption: SwipeBackIconOption())
     }
 
     //check Is Drag
