@@ -43,3 +43,6 @@ struct ContentView: View {
     }
 }
 ~~~
+
+# Preview
+![preview](https://github.com/user-attachments/assets/9ef77448-8e54-4fff-aee7-a24696144447)
